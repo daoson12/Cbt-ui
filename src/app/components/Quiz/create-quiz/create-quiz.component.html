@@ -70,13 +70,12 @@
                         <!-- .form-group -->
                      
                         <div class="form-group">
-                            <legend>Instruction</legend> <!-- .row -->
+                            <legend>Set Quiz Instruction</legend> <!-- .row -->
                           <textarea class="form-control" placeholder="Start typing Instruction" data-toggle="tribute" data-remote="assets/data/tribute.json" data-item-template="true" style="margin-top: 0px; margin-bottom: 0px; height: 120px;"></textarea>
                         </div>
                         <hr class="mt-5">
                         <div class="d-flex">
-                            <button type="button" (click)="next()" class="next btn btn-success float-right mt-4">Next</button>
-                          
+                            <button type="button" class="next btn btn-primary ml-auto" data-validate="fieldset02" (click)="next()" >Next step</button>                          
                         </div>
                       </fieldset><!-- /fieldset -->
                     </div><!-- /.content -->
@@ -84,82 +83,136 @@
                     <div id="test-l-2" class="content">
                       <!-- fieldset -->
                       <fieldset>
-                        <legend>Payment Information</legend> <!-- .custom-control -->
-                        <div class="custom-control custom-radio mb-4">
-                          <input type="radio" id="pmd1" class="custom-control-input" name="paymentMethod" value="creditcard" data-parsley-group="fieldset03" required="" data-parsley-multiple="paymentMethod"> <label class="custom-control-label" for="pmd1">Credit card</label> <!-- .custom-control-hint -->
-                          <div class="custom-control-hint">
-                            <!-- .row -->
-                            <div class="row">
-                              <!-- form col -->
-                              <div class="col-md-6">
-                                <div class="form-group">
-                                  <div class="form-label-group">
-                                    <input type="text" id="pm1" name="ccholder" class="form-control placeholder-shown" data-parsley-group="creditcard" placeholder="Name on card" required=""> <label for="pm1">Card holder</label>
-                                  </div>
-                                </div>
-                              </div><!-- /form col -->
-                              <!-- form col -->
-                              <div class="col-md-6">
-                                <div class="form-group">
-                                  <div class="form-label-group">
-                                    <input type="text" name="ccnumber" class="form-control placeholder-shown" id="pm2" data-mask="cc" data-parsley-group="creditcard" placeholder="4242 4242 4242 4242" required=""> <label for="pm2">Card number</label>
-                                  </div>
-                                </div>
-                              </div><!-- /form col -->
-                            </div><!-- /.row -->
-                            <!-- .row -->
-                            <div class="row">
-                              <!-- form col -->
-                              <div class="col-md-3">
-                                <div class="form-group">
-                                  <div class="form-label-group">
-                                    <input type="text" id="pm3" name="ccexpdate" class="form-control placeholder-shown" data-mask="expdatecc" data-parsley-group="creditcard" placeholder="MM/YY" required=""> <label for="pm3">Exp. date</label>
-                                  </div>
-                                </div>
-                              </div><!-- /form col -->
-                              <!-- form col -->
-                              <div class="col-md-3">
-                                <div class="form-group">
-                                  <div class="form-label-group">
-                                    <input type="text" id="pm4" name="cccvc" class="form-control placeholder-shown" data-mask="cvc" data-parsley-group="creditcard" placeholder="XXX" required=""> <label for="pm4">CVC</label>
-                                  </div>
-                                </div>
-                              </div><!-- /form col -->
-                              <!-- form col -->
-                              <div class="col-md-6">
-                                <!-- you can change attribute type to type="submit" on your real project -->
-                                <button type="button" id="savecc" class="btn btn-lg btn-primary btn-block">Save</button>
-                              </div><!-- /form col -->
-                            </div><!-- /.row -->
-                          </div><!-- /.custom-control-hint -->
-                        </div><!-- /.custom-control -->
-                        <!-- .custom-control -->
-                        <div class="custom-control custom-radio mb-4">
-                          <input type="radio" id="pmd2" class="custom-control-input" name="paymentMethod" value="paypal" checked="" data-parsley-multiple="paymentMethod"> <label class="custom-control-label" for="pmd2">Paypal</label> <!-- .custom-control-hint -->
-                          <div class="custom-control-hint">
-                            <div class="row">
-                              <div class="col-md-10 col-lg-8">
-                                <div class="form-group">
-                                  <div class="input-group h-auto">
-                                    <div class="form-label-group">
-                                      <input type="text" name="paypalid" class="form-control" value="paypal@looper.com" readonly=""> <label>Personal account</label>
-                                    </div>
-                                    <div class="input-group-append ml-auto">
-                                      <span class="input-group-text text-success"><strong>Connected</strong></span>
-                                    </div>
-                                  </div>
-                                </div><button class="btn btn-danger" type="button">Disconnect</button>
-                              </div>
-                            </div>
-                          </div><!-- /.custom-control-hint -->
-                        </div><!-- /.custom-control -->
-                        <!-- .custom-control -->
-                        <div class="custom-control custom-radio mb-4">
-                          <input type="radio" id="pmd3" class="custom-control-input" name="paymentMethod" value="stripe" data-parsley-multiple="paymentMethod"> <label class="custom-control-label" for="pmd3">Stripe</label> <!-- .custom-control-hint -->
-                          <div class="custom-control-hint">
-                            <button class="btn btn-primary" type="button">Connect with <strong><em>Stripe</em></strong></button>
-                          </div><!-- /.custom-control-hint -->
-                        </div><!-- /.custom-control -->
+                      
+                        <div class="form-group">
+                          <legend>Input for Question</legend> <!-- .row -->
+                        <textarea class="form-control" placeholder="Start typing Question" data-toggle="tribute" data-remote="assets/data/tribute.json" data-item-template="true" style="margin-top: 0px; margin-bottom: 0px; height: 80px;"></textarea>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="pi6">Prepended Options &amp; Answers</label> <!-- .input-group -->
+                        <div class="input-group input-group-alt">
+                          <!-- .input-group-prepend -->
+                          <div class="input-group-prepend">
+                            <select class="custom-select">
+                              <option default> Select Option </option>
+                              <option value="1"> A </option>
+                              <option value="2"> B </option>
+                              <option value="3"> C </option>
+                              <option value="4"> D </option>
+                              <option value="5"> Fill in the Blank Space </option>
+                            </select>
+                          </div><!-- /.input-group-prepend -->
+                          <!-- .input-group -->
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><span class="oi oi-magnifying-glass"></span></span>
+                            </div><input type="text" class="form-control" id="pi6" placeholder="Type Answer">
+                          </div><!-- /.input-group -->
+                        </div><!-- /.input-group -->
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group input-group-alt">
+                          <!-- .input-group-prepend -->
+                          <div class="input-group-prepend">
+                            <select class="custom-select">
+                              <option default> Select Option </option>
+                              <option value="1"> A </option>
+                              <option value="2"> B </option>
+                              <option value="3"> C </option>
+                              <option value="4"> D </option>
+                              <option value="5"> Fill in the Blank Space </option>
+                            </select>
+                          </div><!-- /.input-group-prepend -->
+                          <!-- .input-group -->
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><span class="oi oi-magnifying-glass"></span></span>
+                            </div><input type="text" class="form-control" id="pi6" placeholder="Type Answer">
+                          </div><!-- /.input-group -->
+                        </div><!-- /.input-group -->
+                      </div>
+                      <div class="form-group">
+                       
+                        <div class="input-group input-group-alt">
+                          <!-- .input-group-prepend -->
+                          <div class="input-group-prepend">
+                            <select class="custom-select">
+                              <option default> Select Option </option>
+                              <option value="1"> A </option>
+                              <option value="2"> B </option>
+                              <option value="3"> C </option>
+                              <option value="4"> D </option>
+                              <option value="5"> Fill in the Blank Space </option>
+                            </select>
+                          </div><!-- /.input-group-prepend -->
+                          <!-- .input-group -->
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><span class="oi oi-magnifying-glass"></span></span>
+                            </div><input type="text" class="form-control" id="pi6" placeholder="Type Answer">
+                          </div><!-- /.input-group -->
+                        </div><!-- /.input-group -->
+                      </div>
+                      <div class="form-group">
+                
+                        <div class="input-group input-group-alt">
+                          <!-- .input-group-prepend -->
+                          <div class="input-group-prepend">
+                            <select class="custom-select">
+                              <option default> Select Option </option>
+                              <option value="1"> A </option>
+                              <option value="2"> B </option>
+                              <option value="3"> C </option>
+                              <option value="4"> D </option>
+                              <option value="5"> Fill in the Blank Space </option>
+                            </select>
+                          </div><!-- /.input-group-prepend -->
+                          <!-- .input-group -->
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><span class="oi oi-magnifying-glass"></span></span>
+                            </div><input type="text" class="form-control" id="pi6" placeholder="Type Answer">
+                          </div><!-- /.input-group -->
+                        </div><!-- /.input-group -->
+                      </div>
+                      <div class="form-group">
+                       
+                        <div class="input-group input-group-alt">
+                          <!-- .input-group-prepend -->
+                          <div class="input-group-prepend">
+                            <select class="custom-select">
+                              <option default> Select Option </option>
+                              <option value="1"> A </option>
+                              <option value="2"> B </option>
+                              <option value="3"> C </option>
+                              <option value="4"> D </option>
+                              <option value="5"> Fill in the Blank Space </option>
+                            </select>
+                          </div><!-- /.input-group-prepend -->
+                          <!-- .input-group -->
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><span class="oi oi-magnifying-glass"></span></span>
+                            </div><input type="text" class="form-control" id="pi6" placeholder="Type Answer">
+                          </div><!-- /.input-group -->
+                        </div><!-- /.input-group -->
+                      </div>
+                      <div class="form-group">
+
+                        <div class="input-group input-group-alt">
+                          <label class="input-group-prepend" for="pi4"><span class="input-group-text">Correction Answer:</span></label>    <select class="custom-select">
+                            <option default> Select Option </option>
+                            <option value="1"> A </option>
+                            <option value="2"> B </option>
+                            <option value="3"> C </option>
+                            <option value="4"> D </option>
+                            <option value="5"> Fill in the Blank Space </option>
+                          </select>
+                        </div><!-- /.input-group -->
+                      </div>
+                      <button type="submit" class="btn btn-primary">Add Question</button>
+                        <!-- .custom-control -->  
                         <hr class="mt-5">
                         <div class="d-flex">
                             <button type="button" class="prev btn btn-secondary" (click)="previous()" >Previous</button> 
