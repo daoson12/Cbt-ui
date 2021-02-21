@@ -13,10 +13,7 @@ export class CarQuoteComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.stepper = new Stepper(document.querySelector("#stepper1"), {
-      linear: false,
-      animation: true,
-    });
+
   }
 
   next() {
