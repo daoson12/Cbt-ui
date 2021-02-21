@@ -7,6 +7,7 @@ import { LoginComponent } from './security/login/login.component';
 import { SignUpComponent } from './security/sign-up/sign-up.component';
 import { DashboardComponent } from "./layout/dashboard/dashboard.component";
 import { CreateQuizComponent } from './components/Quiz/create-quiz/create-quiz.component';
+import { CarQuoteComponent } from './components/car-quote/car-quote.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,9 @@ const routes: Routes = [
     },
     {
       path:'create-quiz', component: CreateQuizComponent
+    },
+    {
+      path:'car-quote', component: CarQuoteComponent
     }
   
   ]

@@ -15,6 +15,11 @@ import { CreateCourseComponent } from './components/courses/create-course/create
 import { DashboardComponent } from './layout/dashboard/dashboard.component';
 import { CreateQuizComponent } from './components/Quiz/create-quiz/create-quiz.component';
 import { QuizListComponent } from './components/Quiz/quiz-list/quiz-list.component';
+import { CarQuoteComponent } from './components/car-quote/car-quote.component';
+import {BsDatepickerModule  } from "ngx-bootstrap/datepicker";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 
 @NgModule({
@@ -30,12 +35,13 @@ import { QuizListComponent } from './components/Quiz/quiz-list/quiz-list.compone
     DashboardComponent,
     CreateQuizComponent,
     QuizListComponent,
+    CarQuoteComponent 
   
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ChartsModule
+    
+    BrowserModule,BrowserAnimationsModule,
+    AppRoutingModule,BsDatepickerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

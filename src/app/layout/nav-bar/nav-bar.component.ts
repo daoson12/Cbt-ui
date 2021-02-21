@@ -28,4 +28,8 @@ export class NavBarComponent implements OnInit {
   gotoCreateQuiz(){
     this.router.navigate(['home/create-quiz']);
   }
+
+  gotoCar(){
+    this.router.navigate(['home/car-quote']);
+  }
 }
